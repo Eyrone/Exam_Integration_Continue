@@ -54,18 +54,24 @@
       copy:
         src: /opt/wildfly/docs/contrib/scripts/systemd/wildfly.conf 
         dest: /etc/wildfly/wildfly.conf
+        owner: wildfly
+        group: wildfly
         remote_src: true
     -
       name: "Déplacer wildfly.service"
       copy: 
         src: /opt/wildfly/docs/contrib/scripts/systemd/wildfly.service
         dest: /etc/systemd/system/wildfly.service
+        owner: wildfly
+        group: wildfly
         remote_src: true
     -
       name: "Déplacer et donner les droits à launch.sh"
       copy:
         src: /opt/wildfly/docs/contrib/scripts/systemd/launch.sh
         dest: /opt/wildfly/bin
+        owner: wildfly
+        group: wildfly
         remote_src: true
         mode: 0755
     -
